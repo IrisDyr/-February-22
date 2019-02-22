@@ -1,9 +1,15 @@
 from flask import Blueprint
 
-user = Blueprint('user', __name__, template_folder='templates')
+course = Blueprint('course', __name__, template_folder='templates')
 
-@user.route('/')
+course_list =['INF320', 'COS350', 'COS224',]
 
-def show():
-    return "I am a blueprint"
+
+@course.route('/')
+
+#def show():
+   # return "I am a blueprint" 
+
+def course_list():
+    return render_template("index.html", course = course_list)
 
